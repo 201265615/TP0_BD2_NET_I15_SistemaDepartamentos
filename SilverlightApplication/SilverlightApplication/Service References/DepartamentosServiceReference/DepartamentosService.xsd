@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TareaServiceWebRole" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TareaServiceWebRole" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://tareabases.cloudapp.net/DepartamentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+  <xs:complexType name="departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idDepto" type="xs:int" />
+      <xs:element minOccurs="0" name="nbrDepto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idEncargado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ubicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="empleados" nillable="true" type="tns:ArrayOfempleado">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="departamento" nillable="true" type="tns:departamento" />
+  <xs:complexType name="ArrayOfempleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="empleado" nillable="true" type="tns:empleado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfempleado" nillable="true" type="tns:ArrayOfempleado" />
+  <xs:complexType name="empleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+      <xs:element minOccurs="0" name="nbrEmpleado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idDepto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="foto" nillable="true" type="q1:Binary" />
+      <xs:element minOccurs="0" name="departamentos" nillable="true" type="tns:ArrayOfdepartamento">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empleado" nillable="true" type="tns:empleado" />
+  <xs:complexType name="ArrayOfdepartamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="departamento" nillable="true" type="tns:departamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdepartamento" nillable="true" type="tns:ArrayOfdepartamento" />
+</xs:schema>

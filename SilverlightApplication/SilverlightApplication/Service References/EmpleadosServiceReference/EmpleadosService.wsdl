@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EmpleadosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/EmpleadosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/EmpleadosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/EmpleadosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TareaServiceWebRole" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/EmpleadosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmpleadosService_agregarNuevoEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:agregarNuevoEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_agregarNuevoEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:agregarNuevoEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_eliminarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_eliminarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_modificarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:modificarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_modificarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modificarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_getEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_getEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_getEmpleadosDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmpleadosDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosService_getEmpleadosDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmpleadosDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmpleadosService">
+    <wsdl:operation name="agregarNuevoEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosService/agregarNuevoEmpleado" message="tns:IEmpleadosService_agregarNuevoEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosService/agregarNuevoEmpleadoResponse" message="tns:IEmpleadosService_agregarNuevoEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosService/eliminarEmpleado" message="tns:IEmpleadosService_eliminarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosService/eliminarEmpleadoResponse" message="tns:IEmpleadosService_eliminarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosService/modificarEmpleado" message="tns:IEmpleadosService_modificarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosService/modificarEmpleadoResponse" message="tns:IEmpleadosService_modificarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosService/getEmpleados" message="tns:IEmpleadosService_getEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosService/getEmpleadosResponse" message="tns:IEmpleadosService_getEmpleados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleadosDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosService/getEmpleadosDepartamento" message="tns:IEmpleadosService_getEmpleadosDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosService/getEmpleadosDepartamentoResponse" message="tns:IEmpleadosService_getEmpleadosDepartamento_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEmpleadosService" type="tns:IEmpleadosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="agregarNuevoEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosService/agregarNuevoEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosService/eliminarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosService/modificarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosService/getEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleadosDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosService/getEmpleadosDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmpleadosService">
+    <wsdl:port name="BasicHttpBinding_IEmpleadosService" binding="tns:BasicHttpBinding_IEmpleadosService">
+      <soap:address location="http://tareabases.cloudapp.net/EmpleadosService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

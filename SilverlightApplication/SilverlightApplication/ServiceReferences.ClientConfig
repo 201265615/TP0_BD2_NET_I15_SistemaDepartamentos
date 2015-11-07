@@ -1,0 +1,25 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IEmpleadosService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IDepartamentosService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://tareabases.cloudapp.net/EmpleadosService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IEmpleadosService"
+                contract="EmpleadosServiceReference.IEmpleadosService" name="BasicHttpBinding_IEmpleadosService" />
+            <endpoint address="http://tareabases.cloudapp.net/DepartamentosService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDepartamentosService"
+                contract="DepartamentosServiceReference.IDepartamentosService"
+                name="BasicHttpBinding_IDepartamentosService" />
+        </client>
+    </system.serviceModel>
+</configuration>

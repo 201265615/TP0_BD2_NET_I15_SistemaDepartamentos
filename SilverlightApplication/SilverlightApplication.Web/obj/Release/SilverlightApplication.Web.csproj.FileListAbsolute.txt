@@ -1,0 +1,6 @@
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\bin\SilverlightApplication.Web.dll.config
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\bin\SilverlightApplication.Web.dll
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\bin\SilverlightApplication.Web.pdb
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\obj\Release\SilverlightApplication.Web.dll
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\obj\Release\SilverlightApplication.Web.pdb
+C:\Users\kevem94\documents\visual studio 2013\Projects\SilverlightApplication\SilverlightApplication.Web\obj\Release\SilverlightApplication.Web.csprojResolveAssemblyReference.cache

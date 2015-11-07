@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SQL_Azure" Class="TareaDataClassesDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=wcq8ycznds.database.windows.net;Initial Catalog=SQL_Azure;User ID=pollito" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SQL_AzureConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="proyecto.departamentos" Member="departamentos">
+    <Type Name="departamento">
+      <Column Name="idDepto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nbrDepto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idEncargado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubicacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="departamento_empleado" Member="empleados" ThisKey="idDepto" OtherKey="idDepto" Type="empleado" />
+      <Association Name="empleado_departamento" Member="empleado" ThisKey="idEncargado" OtherKey="idEmpleado" Type="empleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="proyecto.empleados" Member="empleados">
+    <Type Name="empleado">
+      <Column Name="idEmpleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nbrEmpleado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idDepto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="empleado_departamento" Member="departamentos" ThisKey="idEmpleado" OtherKey="idEncargado" Type="departamento" />
+      <Association Name="departamento_empleado" Member="departamento" ThisKey="idDepto" OtherKey="idDepto" Type="departamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="proyecto.SP_getEmpleadosDepartamento" Method="SP_getEmpleadosDepartamento">
+    <Parameter Name="pIdDepto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_getEmpleadosDepartamentoResult">
+      <Column Name="idEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nbrEmpleado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idDepto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="proyecto.SP_getEmpleadosDepartamentoAno" Method="SP_getEmpleadosDepartamentoAno">
+    <ElementType Name="SP_getEmpleadosDepartamentoAnoResult">
+      <Column Name="ano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantEmpleados" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idDepto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

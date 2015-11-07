@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TareaServiceWebRole" version="2.5.6496.10" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <Runtime>
+    <EntryPoint>
+      <NetFxEntryPoint assemblyName="TareaServiceWebRole.dll" targetFrameworkVersion="v4.0" />
+    </EntryPoint>
+  </Runtime>
+  <Properties>
+    <Property name="TargetFrameworkVersion" value="v4.5" />
+    <Property name="RoleType" value="Web" />
+    <Property name="RoleName" value="TareaServiceWebRole" />
+    <Property name="ProjectName" value="TareaServiceWebRole" />
+    <Property name="Configuration" value="Debug" />
+    <Property name="Platform" value="AnyCPU" />
+    <Property name="SetConfiguration" value="Configuration=Debug" />
+    <Property name="SetPlatform" value="Platform=AnyCPU" />
+    <Property name="RoleTargetFramework" value="v4.5" />
+    <Property name="OutputDir" value="C:\Users\kevem94\documents\visual studio 2013\Projects\Tarea_SQL_Azure\Tarea_SQL_Azure\obj\Debug\TareaServiceWebRole\" />
+    <Property name="EntryPoint" value="TareaServiceWebRole.dll" />
+    <Property name="SourceDir" value="C:\Users\kevem94\documents\visual studio 2013\Projects\Tarea_SQL_Azure\TareaServiceWebRole\" />
+    <Property name="SitePhysicalPath" value="C:\Users\kevem94\documents\visual studio 2013\Projects\Tarea_SQL_Azure\TareaServiceWebRole\" />
+    <Property name="TargetRuntimeVersion" value="v4.0" />
+  </Properties>
+  <Sites>
+    <Site name="Web" physicalDirectory="C:\Users\kevem94\documents\visual studio 2013\Projects\Tarea_SQL_Azure\TareaServiceWebRole\">
+      <Bindings>
+        <Binding name="Endpoint1" endpointName="Endpoint1" />
+      </Bindings>
+    </Site>
+  </Sites>
+</RoleModel>

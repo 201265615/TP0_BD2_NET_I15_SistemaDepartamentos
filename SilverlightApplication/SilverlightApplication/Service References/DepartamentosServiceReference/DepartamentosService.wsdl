@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DepartamentosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/DepartamentosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/DepartamentosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/DepartamentosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TareaServiceWebRole" />
+      <xsd:import schemaLocation="http://tareabases.cloudapp.net/DepartamentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDepartamentosService_agregarNuevoDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:agregarNuevoDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_agregarNuevoDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:agregarNuevoDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_eliminarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_eliminarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_modificarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:modificarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_modificarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modificarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getEstadisticas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadisticas" />
+  </wsdl:message>
+  <wsdl:message name="IDepartamentosService_getEstadisticas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadisticasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDepartamentosService">
+    <wsdl:operation name="agregarNuevoDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/agregarNuevoDepartamento" message="tns:IDepartamentosService_agregarNuevoDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/agregarNuevoDepartamentoResponse" message="tns:IDepartamentosService_agregarNuevoDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/eliminarDepartamento" message="tns:IDepartamentosService_eliminarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/eliminarDepartamentoResponse" message="tns:IDepartamentosService_eliminarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/modificarDepartamento" message="tns:IDepartamentosService_modificarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/modificarDepartamentoResponse" message="tns:IDepartamentosService_modificarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/getDepartamentos" message="tns:IDepartamentosService_getDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/getDepartamentosResponse" message="tns:IDepartamentosService_getDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/getDepartamento" message="tns:IDepartamentosService_getDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/getDepartamentoResponse" message="tns:IDepartamentosService_getDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadisticas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartamentosService/getEstadisticas" message="tns:IDepartamentosService_getEstadisticas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartamentosService/getEstadisticasResponse" message="tns:IDepartamentosService_getEstadisticas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDepartamentosService" type="tns:IDepartamentosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="agregarNuevoDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/agregarNuevoDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/eliminarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/modificarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/getDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/getDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadisticas">
+      <soap:operation soapAction="http://tempuri.org/IDepartamentosService/getEstadisticas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepartamentosService">
+    <wsdl:port name="BasicHttpBinding_IDepartamentosService" binding="tns:BasicHttpBinding_IDepartamentosService">
+      <soap:address location="http://tareabases.cloudapp.net/DepartamentosService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

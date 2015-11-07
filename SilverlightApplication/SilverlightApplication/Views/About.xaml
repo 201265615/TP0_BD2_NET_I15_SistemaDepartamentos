@@ -1,0 +1,39 @@
+﻿<navigation:Page x:Class="SilverlightApplication.About" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="Acerca de" 
+    Style="{StaticResource PageStyle}">
+
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
+
+            <StackPanel x:Name="ContentStackPanel">
+
+                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                           Text="Acerca de"/>
+                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" FontWeight="Bold">
+                	<Run Text="Tarea de Bases de Datos II"/>
+                	<LineBreak/>
+                	<Run Text="Investigación de SQL Azure  y Silverlight"/>
+                	<LineBreak/>
+                	<Run/>
+                	<LineBreak/>
+                	<Run Text="Realizado por :"/>
+                	<LineBreak/>
+                	<LineBreak FontFamily="Verdana, Arial, Arial Unicode MS, Lucida Sans Unicode, Lucida Grande"/>
+                	<Run Text="Marcos Calderon Badilla"/>
+                	<LineBreak/>
+                	<Run Text="Kevin Alonso Escobar Miranda"/>
+                	<LineBreak/>
+                	<Run FontFamily="Verdana, Arial, Arial Unicode MS, Lucida Sans Unicode, Lucida Grande" Text="Moisés Ernesto Viales Espinoza"/>
+                </TextBlock>
+
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+
+</navigation:Page>
